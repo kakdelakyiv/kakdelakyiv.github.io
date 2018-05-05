@@ -3,49 +3,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="neon.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            background-image: url("background.png");
+            background-image: url("background-dark.png");
             background-repeat: no-repeat;
             background-size: cover;
+            font-family: 'Pacifico', cursive;
         }
         .window {
-            background-color: white;
             background-color: rgba(0, 0, 0, 0.6);
             width: 640px;
             height: 268px; 
+            padding: 30px;
+            margin: 0 auto;
+        }
+
+        .container {
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
             margin: auto;
-            padding: 30px;
         }
 
         h1 {
-            width: 100vw;
+            width: 100%;
             text-align: center;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: xx-large;
+            font-size: 80px;
             font-style: normal;
             font-variant: normal;
             font-weight: 500;
             line-height: 26.4px;
-            margin-top: 50px;
-            color: #797979;
+            margin-bottom: 100px;
         }
     </style>
     <title>Kak Dela Kyiv</title>
 </head>
 <body>
-    <h1>Coming soon</h1>
-    <div class="window">
-        <iframe src="https://player.vimeo.com/video/267574553?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&badge=0" width="640" height="268" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="container">
+        <h1 class="neon">Coming Soon</h1>
+        <div class="window">
+            <iframe src="https://player.vimeo.com/video/267574553?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&badge=0" width="640" height="268" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
     </div>
-
 </body>
 </html>
 
