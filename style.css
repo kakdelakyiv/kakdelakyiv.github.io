@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /*font-family: "Arial Narrow", Arial, sans-serif;*/
+    font-family: Helvetica;
+    color: white;
+}
+
+#map-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+#main-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+
+    text-shadow: 0px 2px 20px rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
+}
+
+#main-title h1 {
+    margin-bottom: 0px;
+    font-size: 150px;
+}
+
+#main-title h4 {
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+.marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    background-color: white;
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+#grid-container > .grid-cell {
+    position: relative;
+    border: solid 1px white;  
+    cursor: pointer; 
+    object-fit: contain;
+}
+#grid-container > .grid-cell img {
+    width: 100%;
+}
+
+#grid-container > .grid-cell h1 {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    height: 50px;
+    margin-top: -25px;
+    width: 100%;
+    font-size: 50px;
+}
+
+#grid-container > .grid-cell:hover, 
+#grid-container > .grid-cell.hover {
+    color: rgb(223, 223, 223)
+} 
+
+#modal-cover {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+#modal-content {
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    background-color: white;
+    z-index: 101;
+}
+
+#modal-close-button {
+    z-index: 102;
+    width: 30px;
+	height: 30px;			
+	content: url('img/close.png');
+	position: fixed;
+	top: 5vh;
+    right: 5vw;
+    margin-top: 10px;
+    margin-right: 10px;
+	cursor: pointer;
+}
+
+#menu {
+    width: 100vw;
+    height: 50px;
+    color: gray;
+    background-color: white;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu .menu-item-left {
+    float: left;
+    margin: 17px;
+}
+
+#menu .menu-item-right {
+    float: right;
+    margin: 10px;
+}
+
+#menu .image-link {
+    width: 31px;
+    height: 31px;
+    cursor: pointer;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#menu .facebook {
+    background-image: url('img/facebook.png');
+}
+
+#menu .facebook:hover {
+    background-image: url('img/facebook.png');
+}
+
+#menu .instagram {
+    background-image: url('img/instagram.png');
+}
+
+#menu .instagram:hover {
+    background-image: url('img/instagram.png');
+}
+
+#about-us {
+    cursor: pointer;
+}
+
+section.content-wrapper {
+    padding: 20px 50px;
+    color: gray;
+}
+
+
