@@ -2,8 +2,8 @@ var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 import { Topic } from './topic';
 import { Grid } from './grid';
 import { Modal } from './modal';
-import AboutUs from './html/about-us.html';
-import AntonRomanov from './html/topics/anton-romanov.html';
+// import AboutUs from './html/about-us.html';
+// import AntonRomanov from './html/topics/anton-romanov.html';
 
 (function () {
 
@@ -26,7 +26,7 @@ import AntonRomanov from './html/topics/anton-romanov.html';
 
     const topics = [];
     for (let i = 0; i < 9; i++) {
-        topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'anton-romanov.jpg', 'Anton Romanov', 'An artist from Kiev', AntonRomanov));
+        topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
     }
 
     const modal = new Modal();
@@ -62,8 +62,7 @@ import AntonRomanov from './html/topics/anton-romanov.html';
     const aboutUsLink = document.getElementById('about-us');
 
     aboutUsLink.addEventListener('click', function() {
-        console.log(AboutUs);
-        modal.show(AboutUs);
+        modal.show('html/about-us.html');
     });
 })();
 

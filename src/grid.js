@@ -10,7 +10,7 @@ export class Grid {
         cell.id = topic.id;
 
         const img = document.createElement('img');
-        img.src = `img/profiles/${topic.image}`;
+        img.src = topic.image;
 
         const title = document.createElement('h1');
         title.innerHTML = topic.title;

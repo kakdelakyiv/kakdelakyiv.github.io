@@ -22,13 +22,23 @@ export class Modal {
     }
     
     show(content) {
+        const xhttp = new XMLHttpRequest();
+        const elmnt = this.modalContent;
+        const allControls = this.controls;
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) { 
+                elmnt.innerHTML = this.responseText;
+            }
+            if (this.status == 404) {
+                elmnt.innerHTML = 'Page not found.';
+            }
+            
+            allControls.map(c => c.style.display = 'block');
+          }
+        };
 
-        const contentWrapper = document.createElement('section');
-        contentWrapper.classList.add('content-wrapper');
-        contentWrapper.innerHTML = content;
-
-        this.modalContent.innerHTML = '';
-        this.modalContent.appendChild(contentWrapper);
-        this.controls.map(c => c.style.display = 'block');
+        xhttp.open('GET', content, true);
+        xhttp.send();
     }
 }
