@@ -1,6 +1,7 @@
 var topicId = 1000; 
 export class Topic {
     constructor(longitude, latitude, topicName, title, subtitle) {
+        this.topicName = topicName;
         this.longitude = longitude;
         this.latitude = latitude; 
         this.colour = 'black'; 

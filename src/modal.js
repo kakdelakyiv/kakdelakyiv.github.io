@@ -1,8 +1,12 @@
+import { VideoPlayer } from './video-player';
+
 export class Modal {
     constructor() {
         this.modalCover = document.getElementById('modal-cover');
         this.modalContent = document.getElementById('modal-content');
         this.modalCloseButton = document.getElementById('modal-close-button');
+        this.modalContentVideo = document.getElementById('modal-content-video');
+        this.modalContentText = document.getElementById('modal-content-text');
 
         this.controls = [
             this.modalCover,
@@ -15,20 +19,25 @@ export class Modal {
         const that = this;
         const hide = () => {
             that.controls.map(c => c.style.display = 'none');
+            this.modalContentVideo.innerHTML = '';
+            this.modalContentText.innerHTML = '';
         };
 
         this.modalCover.addEventListener('click', hide);
         this.modalCloseButton.addEventListener('click', hide);
     }
     
-    show(content) {
+    show(content, videoName) {
         const xhttp = new XMLHttpRequest();
-        const elmnt = this.modalContent;
+        const elmnt = this.modalContentText;
         const allControls = this.controls;
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4) {
             if (this.status == 200) { 
                 elmnt.innerHTML = this.responseText;
+                if (videoName) {
+                    new VideoPlayer(videoName);
+                }
             }
             if (this.status == 404) {
                 elmnt.innerHTML = 'Page not found.';

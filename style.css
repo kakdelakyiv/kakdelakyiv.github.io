@@ -74,7 +74,7 @@ body {
     height: 50px;
     margin-top: -25px;
     width: 100%;
-    font-size: 50px;
+    font-size: 3vw;
 }
 
 #grid-container > .grid-cell:hover, 
@@ -106,12 +106,13 @@ body {
 
 #modal-content h1 {
     position: absolute;
-    top: 10px;
-    font-size: 60px;
+    top: 10;
+    font-size: 8vw;
     width: 100%;
     text-align: center;
     color: white;
     text-shadow: 0px 2px 20px rgba(0,0,0,0.5);
+    margin: 0;
 }
 
 #modal-close-button {
@@ -224,6 +225,19 @@ blockquote {
     font-weight: bold;
     font-style: italic;
     text-align: right;
+}
+#modal-content-video {
+    position: relative;
+}
+
+#intro-vid-play-button {
+    width: 10vw;
+    height: 10vw;
+    content: url(img/play.png);
+    position: absolute;
+    top: calc(50% - 5vw);
+    left: calc(50% - 5vw);
+    cursor: pointer;
 }
 
 
