@@ -34,6 +34,11 @@ export class Modal {
                 elmnt.innerHTML = 'Page not found.';
             }
             
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                console.log('Hiding videos because mobile');
+                const videos = document.getElementsByTagName('video');
+                videos.style.display = 'none';
+            }
             allControls.map(c => c.style.display = 'block');
           }
         };

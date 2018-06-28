@@ -6,11 +6,18 @@
 </head>
 
 <body>
-    <div id="map-container"></div>
     <div id="main-title">
         <h1>KAK DELA KYIV</h1>
         <h4>Some really nice description here</h4>
     </div>
+    <div id="teaser-container">
+        <video playsinline="true" autoplay="autoplay" muted loop width="100%">
+            <source src="vid/anton-romanov/video.webm" type="video/webm">
+            <source src="vid/anton-romanov/video.ogv" type="video/ogv">
+            <source src="vid/anton-romanov/video.mp4" type="video/mp4"> Sorry, your browser does not support HTML5 videos.
+        </video>
+    </div>
+    <div id="map-container"></div>
     <section id="grid-container"></section>
     <footer id="menu">
         <ul>
@@ -30,9 +37,9 @@
         </ul>
     </footer>
 
-    <div id="modal-cover"></div>
-    <div id="modal-content"></div>
-    <div id="modal-close-button"></div>
+    <div id="modal-cover" style="display: none"></div>
+    <div id="modal-content" style="display: none"></div>
+    <div id="modal-close-button" style="display: none"></div>
 
     <script src="./dist/main.js"></script>
 </body>

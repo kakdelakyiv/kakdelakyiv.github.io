@@ -2,8 +2,6 @@ var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 import { Topic } from './topic';
 import { Grid } from './grid';
 import { Modal } from './modal';
-// import AboutUs from './html/about-us.html';
-// import AntonRomanov from './html/topics/anton-romanov.html';
 
 (function () {
 
@@ -50,11 +48,7 @@ import { Modal } from './modal';
     function removeFadeOut( el, speed ) {
         var seconds = speed/1000;
         el.style.transition = "opacity "+seconds+"s ease";
-    
-        el.style.opacity = 0;
-        setTimeout(function() {
-            el.parentNode.removeChild(el);
-        }, speed);
+        el.style.opacity = 1;
     }
     
     removeFadeOut(document.getElementById('main-title'), 4000);

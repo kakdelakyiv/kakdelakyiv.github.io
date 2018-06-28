@@ -12,6 +12,12 @@ body {
     margin: 0;
 }
 
+#teaser-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
 #main-title {
     position: absolute;
     top: 0;
@@ -19,19 +25,18 @@ body {
     width: 100vw;
     height: 100vh;
     text-align: center;
-
     text-shadow: 0px 2px 20px rgba(0,0,0,0.5);
-    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
 }
 
 #main-title h1 {
     margin-bottom: 0px;
-    font-size: 150px;
+    font-size: 10vw;
 }
 
 #main-title h4 {
     margin-top: 10px;
-    font-size: 50px;
+    font-size: 3vw;
 }
 
 .marker {
@@ -83,7 +88,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 100;
 }
 
@@ -173,6 +178,26 @@ body {
 
 #about-us {
     cursor: pointer;
+}
+
+#about-us-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: gray;
+}
+
+#about-us-container > div {
+    padding: 20px;
+}
+
+#about-us-container img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+#about-us-container a {
+    color: gray;
 }
 
 section.content-wrapper {
