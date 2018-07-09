@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "raw-loader": "^0.5.1",
-    "webpack-cli": "^2.1.5"
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js --watch"
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "webpack-dev-server --open --host 0.0.0.0 --config webpack.config.js"
   },
   "author": "Bosko Kovacevic",
   "license": "ISC"

@@ -18,6 +18,7 @@ export class Modal {
 
         const that = this;
         const hide = () => {
+            that.modalContent.scrollTop = 0;
             that.controls.map(c => c.style.display = 'none');
             this.modalContentVideo.innerHTML = '';
             this.modalContentText.innerHTML = '';
@@ -31,6 +32,7 @@ export class Modal {
         const xhttp = new XMLHttpRequest();
         const elmnt = this.modalContentText;
         const allControls = this.controls;
+
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4) {
             if (this.status == 200) { 
@@ -44,10 +46,11 @@ export class Modal {
             }
             
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                console.log('Hiding videos because mobile');
                 const videos = document.getElementsByTagName('video');
                 videos.style.display = 'none';
             }
+
+            document.getElementById('modal-content').scrollTop = 0;
             allControls.map(c => c.style.display = 'block');
           }
         };

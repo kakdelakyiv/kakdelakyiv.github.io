@@ -2,8 +2,10 @@ var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 import { Topic } from './topic';
 import { Grid } from './grid';
 import { Modal } from './modal';
+import { isMobile } from './utils';
 
-(function () {
+
+window.onload = function () {
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiYm9rb3Nrb2tvcyIsImEiOiJjamc0MjJldXQ4NXBwMzBwbzd6NDBiZTh5In0.FYICg4VkTs8EhV4BBTiPMA';
     const lon = 30.521703502765035;
@@ -22,13 +24,27 @@ import { Modal } from './modal';
         scrollZoom: false
     };
 
-    const topics = [];
-    for (let i = 0; i < 9; i++) {
-        topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
+    if (isMobile()) {
+        options.interactive = false;
     }
 
+    const topics = [];
+
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'masha-reva', 'Masha Reva', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'mariam-nayem', 'Mariam Nayem', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'vaily-alexey', 'Vaily & Alexey', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'jana-woodstock', 'Jana Woodstock', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'sasha-tassio', 'Sasha Tassio', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'yasia-khomenko', 'Yasia Khomenko', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'vova-vorotniov', 'Vova Vorotniov', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'zhenya', 'Zhenya', 'Something'));
+    
+
     const modal = new Modal();
-    const map = new mapboxgl.Map(options);
+    if (!isMobile()) {
+        const map = new mapboxgl.Map(options);
+    }
     const grid = new Grid(modal);
 
     topics.forEach(topic => {
@@ -37,9 +53,7 @@ import { Modal } from './modal';
         element.className = 'marker';
         element.style.backgroundColor = topic.colour;
         
-        const marker = new mapboxgl.Marker(element)
-            .setLngLat([topic.longitude, topic.latitude])
-            .addTo(map);
+        //const marker = new mapboxgl.Marker(element).setLngLat([topic.longitude, topic.latitude]).addTo(map);
 
         grid.addCell(topic);
         element.addEventListener('click', () => modal.show(topic.content));
@@ -58,7 +72,9 @@ import { Modal } from './modal';
     aboutUsLink.addEventListener('click', function() {
         modal.show('html/about-us.html');
     });
-})();
+};
+
+
 
 
 

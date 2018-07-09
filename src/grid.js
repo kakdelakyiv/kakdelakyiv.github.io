@@ -1,11 +1,20 @@
+import { isMobile } from './utils';
+
 export class Grid {
     constructor(modal) {
         this.gridContainer = document.getElementById('grid-container');
         this.allTopics = [];
         this.modal = modal;
+
+        if (isMobile()) {
+            this.gridContainer.classList.add('mobile');
+            alert('is moil');
+        } 
     }
 
     addCell(topic) {
+        console.log('Creating topic');
+        console.log(topic);
         const cell = document.createElement('article');
         cell.id = topic.id;
 
