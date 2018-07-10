@@ -1,4 +1,5 @@
 import { VideoPlayer } from './video-player';
+import { Gallery } from './gallery';
 
 export class Modal {
     constructor() {
@@ -43,6 +44,7 @@ export class Modal {
             }
             if (this.status == 404) {
                 elmnt.innerHTML = 'Page not found.';
+                return;
             }
             
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -52,6 +54,23 @@ export class Modal {
 
             document.getElementById('modal-content').scrollTop = 0;
             allControls.map(c => c.style.display = 'block');
+
+            window.setTimeout(function() {
+                const galleries = document.getElementsByClassName('gallery');
+                if (galleries && galleries.length > 0) {
+                    for (const gallery of galleries) {
+                        const topicName = gallery.getAttribute('data-topic');
+                        const caption = gallery.getAttribute('data-caption');
+                        const imagesString = gallery.getAttribute('data-images');
+                        const images = [];
+                        for (const num of imagesString.split(',')) {
+                            images.push(`img/${topicName}/article-${num}.jpg`);
+                        }
+
+                        new Gallery(gallery, images, caption);
+                    }
+                }
+            }, 1000);
           }
         };
 

@@ -8,13 +8,10 @@ export class Grid {
 
         if (isMobile()) {
             this.gridContainer.classList.add('mobile');
-            alert('is moil');
         } 
     }
 
     addCell(topic) {
-        console.log('Creating topic');
-        console.log(topic);
         const cell = document.createElement('article');
         cell.id = topic.id;
 
