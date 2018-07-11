@@ -2,7 +2,8 @@ body {
     margin: 0;
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     /*font-family: "Arial Narrow", Arial, sans-serif;*/
-    font-family: Helvetica;
+    font-family: lato, sans-serif;
+    /* font-family: Helvetica; */
     color: white;
 }
 
@@ -14,7 +15,6 @@ body {
 
 #teaser-container {
     width: 100vw;
-    height: 100vh;
     margin: 0;
 }
 
@@ -27,6 +27,9 @@ body {
     text-align: center;
     text-shadow: 0px 2px 20px rgba(0,0,0,0.5);
     opacity: 0;
+
+    transition: .15s ease-in-out;
+    transition-property: top;
 }
 
 #main-title h1 {
@@ -47,6 +50,25 @@ body {
     padding: 0;
     width: 15px;
     height: 15px;
+}
+
+#general-info-euromaidan {
+    background-color: #d2d4c9;
+    color: #2e2e2e;
+    width: 100vw;
+    padding-top: 30px;
+}
+
+#general-info-euromaidan p {
+    margin: 0;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+#general-info-euromaidan h1 {
+    border-bottom: dotted 1px;
+    font-size: 40px;
+    margin: 0 30px;
 }
 
 #grid-container {
@@ -105,7 +127,16 @@ body {
     background-color: white;
     z-index: 101;
     overflow-y: auto;
-    text-align: justify;
+    
+}
+
+#modal-content p:first-of-type:first-letter {
+    float: left;
+    padding: 0 .25em 0 0;
+    font-size: 3.55em;
+    font-weight: 400;
+    line-height: 1;
+    color: #df5b57;
 }
 
 #modal-content h1 {
@@ -207,11 +238,23 @@ body {
 
 section.content-wrapper {
     padding: 20px 50px;
-    color: gray;
 }
 
-figcaption {
+.content-wrapper h2 {
+    color: #df5b57;
+    font-size: 30px;
+}
+
+.content-wrapper p {
+    margin-left: 35px;
+    color: black;
+    font-family: Georgia, serif;
+    line-height: 1.6;
+}
+
+.content-wrapper figcaption {
     text-align: center;
+    font-family: Georgia, serif;
 }
 
 .article-image {
@@ -233,6 +276,7 @@ blockquote {
     font-weight: bold;
     font-style: italic;
     text-align: right;
+    color: #df5b57;
 }
 
 #modal-content-video {

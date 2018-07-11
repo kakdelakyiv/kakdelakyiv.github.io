@@ -74,6 +74,35 @@ window.onload = function () {
     });
 };
 
+var mainTitleContainer, mainTitleH1, mainTitleH4;
+var lastCall = 0;
+
+window.addEventListener('scroll', function() {
+    if (!mainTitleContainer || !mainTitleH1 || !mainTitleH4) {
+        mainTitleContainer = document.getElementById('main-title');
+        mainTitleH1 = document.getElementById('main-title-h1');
+        mainTitleH4 = document.getElementById('main-title-h4');
+    }
+
+    const now = new Date().getTime();
+    const diff = now - lastCall;
+
+    if (diff < 30) {
+        return;
+    }
+
+    lastCall = now;
+    const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+        
+    const mainTitleTop = Math.min(20, 0.1*scrollPos) + 'vh'; // between 0vh to 80vh
+    const mainTitleSize = Math.max(8, 10 - 0.005*scrollPos) + 'vw'; // between 10vw to 6vw
+    const subTitleSize = Math.max(2, 3 - 0.005*scrollPos) + 'vw'; // between 3vw to 1vw
+
+    mainTitleH1.style.fontSize = mainTitleSize;
+    mainTitleH4.style.fontSize = subTitleSize;
+    mainTitleContainer.style.top = mainTitleTop;
+});
+
 
 
 
