@@ -1,4 +1,4 @@
-var topicId = 1000; 
+var topicId = 0; 
 export class Topic {
     constructor(longitude, latitude, topicName, title, subtitle) {
         this.topicName = topicName;
@@ -9,6 +9,7 @@ export class Topic {
         this.title = title;
         this.subtitle = subtitle;
         this.content = `html/topics/${topicName}.html`;
-        this.id = `topic_${topicId++}`;
+        this.id = topicId;
+        topicId++;
     }
 }

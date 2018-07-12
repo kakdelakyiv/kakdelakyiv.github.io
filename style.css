@@ -163,6 +163,27 @@ body {
 	cursor: pointer;
 }
 
+#modal-left-button, #modal-right-button {
+    cursor: pointer;
+    position: fixed;
+    top: 42vh;
+    width: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 5vw;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 1000;
+}
+
+#modal-left-button {
+    left: 1vw;
+}
+
+#modal-right-button {
+    right: 1vw;
+}
+
 #menu {
     width: 100vw;
     height: 50px;

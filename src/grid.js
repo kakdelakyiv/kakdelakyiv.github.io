@@ -25,8 +25,10 @@ export class Grid {
         cell.appendChild(title);
 
         cell.classList.add('grid-cell');
+        this.modal.register(topic.content, topic.topicName);
+
         cell.addEventListener('click', () =>  {
-            this.modal.show(topic.content, topic.topicName);
+            this.modal.show(topic.id, topic.content, topic.topicName);
         });
 
         this.gridContainer.appendChild(cell);

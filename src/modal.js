@@ -9,6 +9,9 @@ export class Modal {
         this.modalContentVideo = document.getElementById('modal-content-video');
         this.modalContentText = document.getElementById('modal-content-text');
 
+        this.modalLeftButton = document.getElementById('modal-left-button');
+        this.modalRightButton = document.getElementById('modal-right-button');
+
         this.controls = [
             this.modalCover,
             this.modalContent,
@@ -27,9 +30,39 @@ export class Modal {
 
         this.modalCover.addEventListener('click', hide);
         this.modalCloseButton.addEventListener('click', hide);
+        this.allContent = [];
+        this.currentlyShowingContent = -1;
+
+        this.modalLeftButton.addEventListener('click', function() {
+            that.currentlyShowingContent--;
+            if (that.currentlyShowingContent < 0) {
+                that.currentlyShowingContent = that.allContent.length - 1;
+            }
+
+            const toShow = that.allContent[that.currentlyShowingContent];
+            that.show(that.currentlyShowingContent, toShow.content, toShow.videoName);
+        });
+
+        this.modalRightButton.addEventListener('click', function() {
+            that.currentlyShowingContent++;
+            if (that.currentlyShowingContent >= that.allContent.length) {
+                that.currentlyShowingContent = 0;
+            }
+
+            const toShow = that.allContent[that.currentlyShowingContent];
+            that.show(that.currentlyShowingContent, toShow.content, toShow.videoName);
+        });
+    }
+
+    register(content, videoName) {
+        this.allContent.push({
+            content: content, 
+            videoName: videoName
+        });
     }
     
-    show(content, videoName) {
+    show(id, content, videoName) {
+        this.currentlyShowingContent = id;
         const xhttp = new XMLHttpRequest();
         const elmnt = this.modalContentText;
         const allControls = this.controls;
