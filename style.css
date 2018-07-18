@@ -281,18 +281,15 @@ section.content-wrapper {
 }
 
 .article-image {
+    width: 90vw;
+    margin-left: -50px;
+}
+
+.image-gallery-image {
     width: 100%;
 }
 
-.image-and-text {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 
-section.image-and-text p {
-    margin: 0;
-    padding-left: 20px;
-}
 
 blockquote {
     font-size: 25px;

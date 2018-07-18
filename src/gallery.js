@@ -11,7 +11,7 @@ export class Gallery {
             const imagePath = images[i];
             const imageElement = document.createElement('img');
             imageElement.classList.add('image-gallery-image');
-            imageElement.classList.add('article-image');
+            // imageElement.classList.add('article-image');
             imageElement.src = imagePath;
 
             if (i !== this.currentImageIndex) {
