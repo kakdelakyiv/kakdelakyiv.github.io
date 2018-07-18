@@ -101,6 +101,7 @@ body {
     margin-top: -25px;
     width: 100%;
     font-size: 3vw;
+    text-shadow: black 0px 2px 10px;
 }
 
 #grid-container > .grid-cell:hover, 
@@ -276,6 +277,7 @@ section.content-wrapper {
 .content-wrapper figcaption {
     text-align: center;
     font-family: Georgia, serif;
+    color: black;
 }
 
 .article-image {
