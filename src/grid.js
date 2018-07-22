@@ -18,11 +18,11 @@ export class Grid {
         const img = document.createElement('img');
         img.src = topic.image.replace('.jpg', '.lowres.jpg'); // topic.image;
 
-        const fullImage = new Image();
-        fullImage.src = topic.image;
+        const fullImage = new Image();        
         fullImage.onload = () => {
             img.src = topic.image;
         };
+        fullImage.src = topic.image;
 
         const title = document.createElement('h1');
         title.innerHTML = topic.title;

@@ -101,7 +101,7 @@ window.addEventListener('scroll', function() {
         
     const mainTitleTop = Math.min(20, 0.1*scrollPos) + 'vh'; // between 0vh to 80vh
     const mainTitleSize = Math.max(8, 10 - 0.005*scrollPos) + 'vw'; // between 10vw to 6vw
-    const subTitleSize = Math.max(2, 3 - 0.005*scrollPos) + 'vw'; // between 3vw to 1vw
+    // const subTitleSize = Math.max(2, 3 - 0.005*scrollPos) + 'vw'; // between 3vw to 1vw
 
     mainTitleH1.style.fontSize = mainTitleSize;
     // mainTitleH4.style.fontSize = subTitleSize;
