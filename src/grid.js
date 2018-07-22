@@ -16,7 +16,13 @@ export class Grid {
         cell.id = topic.id;
 
         const img = document.createElement('img');
-        img.src = topic.image;
+        img.src = topic.image.replace('.jpg', '.lowres.jpg'); // topic.image;
+
+        const fullImage = new Image();
+        fullImage.src = topic.image;
+        fullImage.onload = () => {
+            img.src = topic.image;
+        };
 
         const title = document.createElement('h1');
         title.innerHTML = topic.title;
