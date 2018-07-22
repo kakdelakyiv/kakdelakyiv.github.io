@@ -38,7 +38,7 @@ window.onload = function () {
     topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'sasha-tassio', 'Sasha Tassio', 'Something'));
     topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'yasia-khomenko', 'Yasia Khomenko', 'Something'));
     topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'vova-vorotniov', 'Vova Vorotniov', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'zhenya', 'Zhenya', 'Something'));
+    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'evgenya-vidischeva', 'Evgenya Vidischeva', 'Something'));
     
 
     const modal = new Modal();

@@ -1,5 +1,5 @@
 export class Gallery {
-    constructor (parentElement, images, caption) {
+    constructor (parentElement, images, captions) {
 
         this.allImageElements = [];
         this.currentImageIndex = 0;
@@ -11,7 +11,6 @@ export class Gallery {
             const imagePath = images[i];
             const imageElement = document.createElement('img');
             imageElement.classList.add('image-gallery-image');
-            // imageElement.classList.add('article-image');
             imageElement.src = imagePath;
 
             if (i !== this.currentImageIndex) {
@@ -42,10 +41,11 @@ export class Gallery {
         rightArrow.innerHTML = '❯';
         container.appendChild(rightArrow);
 
-        if (caption) {
-            const captionElement = document.createElement('figcaption');
-            captionElement.innerHTML = caption;
-            container.appendChild(captionElement);
+        if (captions) {
+            this.captions = captions;
+            this.captionElement = document.createElement('figcaption');
+            this.captionElement.innerHTML = this.captions[this.currentImageIndex];
+            container.appendChild(this.captionElement);
         }
 
         parentElement.appendChild(container);
@@ -58,6 +58,10 @@ export class Gallery {
             this.currentImageIndex = max - 1;
         } else if (this.currentImageIndex >= max) {
             this.currentImageIndex = 0;
+        }
+
+        if (this.captions && this.captions.length > 1) {
+            this.captionElement.innerHTML = this.captions[this.currentImageIndex];
         }
 
         for (let i = 0; i < max; i++) {

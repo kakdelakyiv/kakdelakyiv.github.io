@@ -100,7 +100,12 @@ export class Modal {
                             images.push(`img/${topicName}/article-${num}.jpg`);
                         }
 
-                        new Gallery(gallery, images, caption);
+                        let captionsArray = null;
+                        if (caption) {
+                            captionsArray = caption.split('|');
+                        }
+                        
+                        new Gallery(gallery, images, captionsArray);
                     }
                 }
             }, 1000);
