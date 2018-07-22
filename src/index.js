@@ -25,38 +25,43 @@ window.onload = function () {
     };
 
     if (isMobile()) {
-        options.interactive = false;
+        const videoArrow = document.getElementById('video-arrow');
+        videoArrow.parentElement.removeChild(videoArrow);
+
+        const mapContainer = document.getElementById('map-container');
+        mapContainer.parentElement.removeChild(mapContainer);
     }
 
     const topics = [];
 
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'masha-reva', 'Masha Reva', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'mariam-nayem', 'Mariam Nayem', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'vaily-alexey', 'Vaily & Alexey', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'jana-woodstock', 'Jana Woodstock', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'sasha-tassio', 'Sasha Tassio', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'yasia-khomenko', 'Yasia Khomenko', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'vova-vorotniov', 'Vova Vorotniov', 'Something'));
-    topics.push(new Topic(lon + 0.0300, lat + 0.0130, 'evgenya-vidischeva', 'Evgenya Vidischeva', 'Something'));
+    topics.push(new Topic(lon + 0.03, lat + 0.0130, 'masha-reva', 'Masha Reva', 'Something'));
+    topics.push(new Topic(lon + 0.04, lat + 0.0131, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
+    topics.push(new Topic(lon + 0.05, lat + 0.0132, 'mariam-nayem', 'Mariam Nayem', 'Something'));
+    topics.push(new Topic(lon + 0.06, lat + 0.0133, 'vaily-alexey', 'Vaily & Alexey', 'Something'));
+    topics.push(new Topic(lon + 0.07, lat + 0.0134, 'jana-woodstock', 'Jana Woodstock', 'Something'));
+    topics.push(new Topic(lon + 0.08, lat + 0.0135, 'sasha-tassio', 'Sasha Tassio', 'Something'));
+    topics.push(new Topic(lon + 0.09, lat + 0.0136, 'yasia-khomenko', 'Yasia Khomenko', 'Something'));
+    topics.push(new Topic(lon + 0.1, lat + 0.0137, 'vova-vorotniov', 'Vova Vorotniov', 'Something'));
+    topics.push(new Topic(lon + 0.11, lat + 0.0138, 'evgenya-vidischeva', 'Evgenya Vidischeva', 'Something'));
     
 
     const modal = new Modal();
+    let map;
     if (!isMobile()) {
-        const map = new mapboxgl.Map(options);
+        map = new mapboxgl.Map(options);
     }
     const grid = new Grid(modal);
 
     topics.forEach(topic => {
-
-        const element = document.createElement('div');
-        element.className = 'marker';
-        element.style.backgroundColor = topic.colour;
-        
-        //const marker = new mapboxgl.Marker(element).setLngLat([topic.longitude, topic.latitude]).addTo(map);
+        if (map) {
+            const element = document.createElement('div');
+            element.className = 'marker';
+            element.style.backgroundColor = 'black';
+            const marker = new mapboxgl.Marker(element).setLngLat([topic.longitude, topic.latitude]).addTo(map);
+            element.addEventListener('click', () => modal.show(topic.id, topic.content, topic.topicName));
+        }
 
         grid.addCell(topic);
-        element.addEventListener('click', () => modal.show(topic.content));
     });
 
     function removeFadeOut( el, speed ) {
@@ -70,7 +75,7 @@ window.onload = function () {
     const aboutUsLink = document.getElementById('about-us');
 
     aboutUsLink.addEventListener('click', function() {
-        modal.show('html/about-us.html');
+        modal.show(null, 'html/about-us.html', null);
     });
 };
 
