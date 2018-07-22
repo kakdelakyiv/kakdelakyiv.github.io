@@ -1,11 +1,18 @@
 body {
     margin: 0;
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-    /*font-family: "Arial Narrow", Arial, sans-serif;*/
     font-family: lato, sans-serif;
-    /* font-family: Helvetica; */
     color: white;
 }
+
+.mobileShow {display: none;} 
+.mobileHide {display: inline;} 
+
+@media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px){ 
+      .mobileShow {display: inline;}
+      .mobileHide {display: none;}
+  }
 
 #map-container {
     width: 100vw;
@@ -39,7 +46,7 @@ body {
 
 #main-title h4 {
     margin-top: 10px;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 .marker {

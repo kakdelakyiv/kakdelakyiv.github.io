@@ -104,7 +104,7 @@ window.addEventListener('scroll', function() {
     const subTitleSize = Math.max(2, 3 - 0.005*scrollPos) + 'vw'; // between 3vw to 1vw
 
     mainTitleH1.style.fontSize = mainTitleSize;
-    mainTitleH4.style.fontSize = subTitleSize;
+    // mainTitleH4.style.fontSize = subTitleSize;
     mainTitleContainer.style.top = mainTitleTop;
 });
 
