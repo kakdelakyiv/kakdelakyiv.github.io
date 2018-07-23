@@ -1,3 +1,5 @@
+import { notStrictEqual } from "assert";
+
 export class VideoPlayer {
     constructor(videoFolder) {
         this.videoElement = document.createElement('video');
@@ -22,6 +24,11 @@ export class VideoPlayer {
         const thatVideoElement = this.videoElement;
         const thatPlayButtonElement = this.playButton;
 
+        const bouncyArrow = document.createElement('div');
+        bouncyArrow.classList.add('arrow-modal');
+        bouncyArrow.classList.add('bounce');
+        bouncyArrow.classList.add('mobileHide');
+
         this.playButton.addEventListener('click', function() {
             thatVideoElement.setAttribute('playsinline', 'false');
             thatVideoElement.removeAttribute('autoplay');
@@ -30,6 +37,7 @@ export class VideoPlayer {
             thatVideoElement.muted = false;
             thatVideoElement.controls = true;
             thatPlayButtonElement.style.display = 'none';
+            bouncyArrow.parentElement.removeChild(bouncyArrow);
 
             const titles =  document.getElementsByClassName('video-title');
             if (titles) {
@@ -41,5 +49,7 @@ export class VideoPlayer {
         videoContainer.innerHTML = '';
         videoContainer.appendChild(this.videoElement);
         videoContainer.appendChild(this.playButton);
+        videoContainer.appendChild(bouncyArrow);
+        
     }
 }

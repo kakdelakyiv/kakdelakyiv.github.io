@@ -79,11 +79,6 @@ export class Modal {
                 elmnt.innerHTML = 'Page not found.';
                 return;
             }
-            
-            // if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            //     const videos = document.getElementsByTagName('video');
-            //     videos.style.display = 'none';
-            // }
 
             document.getElementById('modal-content').scrollTop = 0;
             allControls.map(c => c.style.display = 'block');
