@@ -36,13 +36,13 @@ window.onload = function () {
 
     topics.push(new Topic(lon + 0.03, lat + 0.0130, 'masha-reva', 'Masha Reva', 'Something'));
     topics.push(new Topic(lon + 0.04, lat + 0.0131, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
-    topics.push(new Topic(lon + 0.05, lat + 0.0132, 'mariam-nayem', 'Mariam Nayem', 'Something'));
-    topics.push(new Topic(lon + 0.06, lat + 0.0133, 'vaily-alexey', 'Vaily & Alexey', 'Something'));
+    topics.push(new Topic(lon + 0.05, lat + 0.0132, 'mariam-nayyem', 'Mariam Nayyem', 'Something'));
+    topics.push(new Topic(lon + 0.06, lat + 0.0133, 'vasiliy-oleksii', 'Vasiliy & Oleksii', 'Something'));
     topics.push(new Topic(lon + 0.07, lat + 0.0134, 'jana-woodstock', 'Jana Woodstock', 'Something'));
-    topics.push(new Topic(lon + 0.08, lat + 0.0135, 'sasha-tassio', 'Sasha Tassio', 'Something'));
+    topics.push(new Topic(lon + 0.08, lat + 0.0135, 'sasha-tessio', 'Sasha Tessio', 'Something'));
     topics.push(new Topic(lon + 0.09, lat + 0.0136, 'yasia-khomenko', 'Yasia Khomenko', 'Something'));
     topics.push(new Topic(lon + 0.1, lat + 0.0137, 'vova-vorotniov', 'Vova Vorotniov', 'Something'));
-    topics.push(new Topic(lon + 0.11, lat + 0.0138, 'evgenya-vidischeva', 'Evgenya Vidischeva', 'Something'));
+    topics.push(new Topic(lon + 0.11, lat + 0.0138, 'evgenia-vidischeva', 'Evgenia Vidischeva', 'Something'));
 
 
     const modal = new Modal();
