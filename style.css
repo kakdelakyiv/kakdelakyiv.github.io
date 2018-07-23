@@ -292,6 +292,11 @@ section.content-wrapper {
     margin-left: -50px;
 }
 
+.article-image-vertical {
+    width: 50vw;
+    margin-left: 16vw;
+}
+
 .image-gallery-image {
     width: 100%;
 }
