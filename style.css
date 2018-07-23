@@ -144,7 +144,7 @@ body {
     font-size: 3.55em;
     font-weight: 400;
     line-height: 1;
-    color: #df5b57;
+    color: #3ca9ff;
 }
 
 #modal-content h1 {
@@ -270,7 +270,7 @@ section.content-wrapper {
 }
 
 .content-wrapper h2 {
-    color: #df5b57;
+    color: #3ca9ff;
     font-size: 30px;
 }
 
@@ -302,8 +302,10 @@ blockquote {
     font-size: 25px;
     font-weight: bold;
     font-style: italic;
-    text-align: right;
-    color: #df5b57;
+    text-align: justify;
+    color: #3ca9ff;
+    width: 40vw;
+    margin-left: 22vw;
 }
 
 #modal-content-video {
@@ -329,6 +331,8 @@ blockquote {
 
 .gallery figcaption {
     margin-top: 10px;
+    font-style: italic;
+    font-size: 12px;
 }
 
 .image-gallery-right,
@@ -364,6 +368,8 @@ blockquote {
 
 .non-gallery-caption {
     margin-top: 10px;
+    font-style: italic;
+    font-size: 12px;
 }
 
 
