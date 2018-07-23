@@ -1,6 +1,8 @@
 import { VideoPlayer } from './video-player';
 import { Gallery } from './gallery';
 
+var galleryLoadEvent;
+
 export class Modal {
     constructor() {
         this.modalCover = document.getElementById('modal-cover');
@@ -83,7 +85,10 @@ export class Modal {
             document.getElementById('modal-content').scrollTop = 0;
             allControls.map(c => c.style.display = 'block');
 
-            window.setTimeout(function() {
+            if (galleryLoadEvent) {
+                window.clearTimeout(galleryLoadEvent);
+            }
+            galleryLoadEvent = window.setTimeout(function() {
                 const galleries = document.getElementsByClassName('gallery');
                 if (galleries && galleries.length > 0) {
                     for (const gallery of galleries) {
