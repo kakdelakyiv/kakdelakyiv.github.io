@@ -144,7 +144,7 @@ body {
     font-size: 3.55em;
     font-weight: 400;
     line-height: 1;
-    color: #3ca9ff;
+    color: #e58c8a;
 }
 
 #modal-content h1 {
@@ -270,7 +270,7 @@ section.content-wrapper {
 }
 
 .content-wrapper h2 {
-    color: #3ca9ff;
+    color: #e58c8a;
     font-size: 30px;
 }
 
@@ -303,7 +303,7 @@ blockquote {
     font-weight: bold;
     font-style: italic;
     text-align: justify;
-    color: #3ca9ff;
+    color: #e58c8a;
     width: 40vw;
     margin-left: 22vw;
 }
@@ -339,13 +339,13 @@ blockquote {
 .image-gallery-left {
     cursor: pointer;
     position: absolute;
-    top: 40%;
+    top: 45%;
     width: auto;
     padding: 16px;
     margin-top: -50px;
     color: white;
-    font-weight: bold;
-    font-size: 10vh;
+    /* font-weight: bold; */
+    font-size: 3vw;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
