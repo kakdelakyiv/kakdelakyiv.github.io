@@ -10,6 +10,7 @@ window.onload = function () {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYm9rb3Nrb2tvcyIsImEiOiJjamc0MjJldXQ4NXBwMzBwbzd6NDBiZTh5In0.FYICg4VkTs8EhV4BBTiPMA';
     const lon = 30.521703502765035;
     const lat = 50.44810640667666;
+    
     const boundPadding = 0.5;
     const options = {
         center: [lon, lat],
@@ -36,7 +37,7 @@ window.onload = function () {
 
     topics.push(new Topic(lon + 0.03, lat + 0.0130, 'masha-reva', 'Masha Reva', 'Something'));
     topics.push(new Topic(lon + 0.04, lat + 0.0131, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
-    topics.push(new Topic(lon + 0.05, lat + 0.0132, 'mariam-nayyem', 'Mariam Nayyem', 'Something'));
+    topics.push(new Topic(30.5131, 50.4419, 'mariam-nayyem', 'Mariam Nayyem', 'Taras Shevschenko Park, one of Kyiv’s most popular parks (Mariam)'));
     topics.push(new Topic(lon + 0.06, lat + 0.0133, 'vasiliy-oleksii', 'Vasiliy & Oleksii', 'Something'));
     topics.push(new Topic(lon + 0.07, lat + 0.0134, 'jana-woodstock', 'Jana Woodstock', 'Something'));
     topics.push(new Topic(lon + 0.08, lat + 0.0135, 'sasha-tessio', 'Sasha Tessio', 'Something'));
@@ -74,6 +75,7 @@ window.onload = function () {
         if (map) {
             const element = document.createElement('div');
             element.className = 'marker';
+            element.title = topic.tooltip;
             element.style.backgroundColor = 'black';
             const marker = new mapboxgl.Marker(element).setLngLat([topic.longitude, topic.latitude]).addTo(map);
             element.addEventListener('click', () => modal.show(topic.id, topic.content, topic.topicName));
