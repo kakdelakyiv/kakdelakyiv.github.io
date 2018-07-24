@@ -168,7 +168,7 @@ body {
     right: 5vw;
     margin-top: 10px;
     margin-right: 10px;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #modal-left-button, #modal-right-button {
@@ -344,17 +344,17 @@ blockquote {
 .image-gallery-left {
     cursor: pointer;
     position: absolute;
-    top: 45%;
+    top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 6px;
     margin-top: -50px;
     color: white;
-    /* font-weight: bold; */
     font-size: 3vw;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .image-gallery-right {
@@ -368,7 +368,7 @@ blockquote {
 
 .image-gallery-left:hover,
 .image-gallery-right:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .non-gallery-caption {
