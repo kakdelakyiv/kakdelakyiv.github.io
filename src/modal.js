@@ -63,7 +63,12 @@ export class Modal {
         });
     }
     
-    show(id, content, videoName) {
+    show(id, content, videoName, showArrows = true) {
+        
+        this.modalLeftButton.style.display = 
+        this.modalRightButton.style.display = 
+            showArrows ? 'block' : 'none';
+            
         this.currentlyShowingContent = id;
         const xhttp = new XMLHttpRequest();
         const elmnt = this.modalContentText;

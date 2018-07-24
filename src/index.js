@@ -93,7 +93,7 @@ window.onload = function () {
     const aboutUsLink = document.getElementById('about-us');
 
     aboutUsLink.addEventListener('click', function () {
-        modal.show(null, 'html/about-us.html', null);
+        modal.show(null, 'html/about-us.html', null, false);
     });
 };
 
