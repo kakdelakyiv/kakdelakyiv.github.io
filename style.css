@@ -59,6 +59,36 @@ body {
     height: 15px;
 }
 
+.marker .marker-text {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: rgb(41, 41, 41);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1000;
+    top: 20;
+}
+
+.marker .marker-text-right {
+    left: 20;
+}
+
+.marker .marker-text-left {
+    right: 20;
+}
+
+.marker:hover .marker-text {
+    visibility: visible;
+}
+
+.marker:hover {
+    width: 17px;
+    height: 17px;
+}
+
 #general-info-euromaidan {
     background-color: #d2d4c9;
     color: #2e2e2e;
@@ -278,7 +308,7 @@ section.content-wrapper {
     margin-left: 35px;
     color: black;
     font-family: Georgia, serif;
-    line-height: 1.6;
+    line-height: 2.0;
 }
 
 .content-wrapper figcaption {

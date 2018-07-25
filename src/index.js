@@ -8,15 +8,15 @@ import { isMobile } from './utils';
 window.onload = function () {
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiYm9rb3Nrb2tvcyIsImEiOiJjamc0MjJldXQ4NXBwMzBwbzd6NDBiZTh5In0.FYICg4VkTs8EhV4BBTiPMA';
-    const lon = 30.521703502765035;
-    const lat = 50.44810640667666;
+    const lon = 30.5555;// 30.521703502765035;
+    const lat = 50.455; //50.44810640667666
     
     const boundPadding = 0.5;
     const options = {
         center: [lon, lat],
         container: 'map-container',
         style: 'mapbox://styles/mapbox/light-v9',
-        zoom: 11,
+        zoom: 11.9,
         minZoom: 9.4,
         keyboard: false,
         dragRotate: false,
@@ -35,11 +35,11 @@ window.onload = function () {
 
     const topics = [];
 
-    topics.push(new Topic(30.645212, 50.46352, 'masha-reva', 'Masha Reva', 'the market of Lesnaya, a paradise for second-hand shoppers (Masha) '));
-    topics.push(new Topic(30.49978, 50.46767, 'anton-romanov', 'Anton Romanov', 'the industrial site of Nizhneyurkovskaya street, that hosts several night clubs, an independent radio station, and a theatre (Anton)'));
+    topics.push(new Topic(30.645212, 50.46352, 'masha-reva', 'Masha Reva', 'The market of Lesnaya, a paradise for second-hand shoppers (Masha) '));
+    topics.push(new Topic(30.44854, 50.473744, 'anton-romanov', 'Anton Romanov', 'The Syrets district, home to the director and his boyfriend (Anton)'));
     topics.push(new Topic(30.5131, 50.4419, 'mariam-nayyem', 'Mariam Nayyem', 'Taras Shevschenko Park, one of Kyiv’s most popular parks (Mariam)'));
     topics.push(new Topic(30.5171335, 50.4694992, 'vasiliy-oleksii', 'Vasiliy & Oleksii', 'The quickly gentrifying area of Podol (Vasiliy & Oleksii)'));
-    topics.push(new Topic(30.5, 50.47, 'jana-woodstock', 'Jana Woodstock', 'the industrial site of Nizhneyurkovskaya street, that hosts several night clubs, an independent radio station, and a theatre (Jana)'));
+    topics.push(new Topic(30.511723, 50.458786, 'jana-woodstock', 'Jana Woodstock', 'Pagan cemetery atop a hill (Jana)'));
     topics.push(new Topic(30.5004461, 50.4663455, 'sasha-tessio', 'Sasha Tessio', 'Independent radio station (Sasha)'));
     topics.push(new Topic(30.5158929, 50.4598181, 'yasia-khomenko', 'Yasia Khomenko', 'Andreevsky Descent, Kyiv’s most picturesque street (Yasia)'));
     topics.push(new Topic(30.5042795, 50.4598247, 'vova-vorotniov', 'Vova Vorotniov', 'Podol - Petrivska 30-34, former garage cooperative turned into a hidden hang-out (Vova)'));
@@ -74,19 +74,53 @@ window.onload = function () {
 
 
     const grid = new Grid(modal);
-
+    let markerId = 99999;
     topics.forEach(topic => {
         if (map) {
             const element = document.createElement('div');
             element.className = 'marker';
-            element.title = topic.tooltip;
+            element.id = markerId++;
             element.style.backgroundColor = 'black';
+
+            const markerClass = topic.topicName ===  'masha-reva'
+                ? 'marker-text marker-text-left'
+                : 'marker-text marker-text-right';
+
+            element.innerHTML = `<div class="${markerClass}">${topic.tooltip}</div>`;
+
+            element.addEventListener('mouseover',  (event) => {
+                const elements = document.getElementsByClassName('marker');
+                for (let el of elements) {
+                    console.log(event);
+                    if (el.id === event.target.id) {
+                        continue;
+                    }
+
+                    el.style.opacity = 0;
+                }
+            });
+
+            element.addEventListener('mouseout',  (event) => {
+                const elements = document.getElementsByClassName('marker');
+                for (let el of elements) {
+                    el.style.opacity = 1;
+                }
+            });
+
             const marker = new mapboxgl.Marker(element).setLngLat([topic.longitude, topic.latitude]).addTo(map);
             element.addEventListener('click', () => modal.show(topic.id, topic.content, topic.topicName));
         }
 
         grid.addCell(topic);
     });
+
+    if (map) {
+        const element = document.createElement('div');
+        element.className = 'marker';
+        element.innerHTML = `<div class="marker-text marker-text-left">Maidan Nezalezhnosti, the square where the Euromaidan protests took place in 2013-2014</div>`;
+        element.style.backgroundColor = 'red';
+        const marker = new mapboxgl.Marker(element).setLngLat([30.522667, 50.451102]).addTo(map);
+    }
 
     function removeFadeOut(el, speed) {
         var seconds = speed / 1000;
