@@ -7,7 +7,7 @@ export class VideoPlayer {
         this.videoElement.setAttribute('autoplay', 'autoplay');
         this.videoElement.setAttribute('width', '100%');
         //this.videoElement.setAttribute('preload', 'auto');
-        //this.videoElement.setAttribute('poster', `img/${videoFolder}/profile.jpg`);
+        this.videoElement.setAttribute('poster', `img/${videoFolder}/profile.jpg`);
         this.videoElement.style.backgroundColor = 'black';
         this.videoElement.loop = true;
         this.videoElement.muted = true;

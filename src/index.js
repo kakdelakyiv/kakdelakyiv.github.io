@@ -35,14 +35,14 @@ window.onload = function () {
 
     const topics = [];
 
-    topics.push(new Topic(30.645212, 50.46352, 'masha-reva', 'Masha Reva', 'The market of Lesnaya, a paradise for second-hand shoppers (Masha)'));
-    topics.push(new Topic(lon + 0.04, lat + 0.0131, 'anton-romanov', 'Anton Romanov', 'An artist from Kiev'));
+    topics.push(new Topic(30.645212, 50.46352, 'masha-reva', 'Masha Reva', 'the market of Lesnaya, a paradise for second-hand shoppers (Masha) '));
+    topics.push(new Topic(30.49978, 50.46767, 'anton-romanov', 'Anton Romanov', 'the industrial site of Nizhneyurkovskaya street, that hosts several night clubs, an independent radio station, and a theatre (Anton)'));
     topics.push(new Topic(30.5131, 50.4419, 'mariam-nayyem', 'Mariam Nayyem', 'Taras Shevschenko Park, one of Kyiv’s most popular parks (Mariam)'));
     topics.push(new Topic(30.5171335, 50.4694992, 'vasiliy-oleksii', 'Vasiliy & Oleksii', 'The quickly gentrifying area of Podol (Vasiliy & Oleksii)'));
-    topics.push(new Topic(lon + 0.07, lat + 0.0134, 'jana-woodstock', 'Jana Woodstock', 'Something'));
+    topics.push(new Topic(30.5, 50.47, 'jana-woodstock', 'Jana Woodstock', 'the industrial site of Nizhneyurkovskaya street, that hosts several night clubs, an independent radio station, and a theatre (Jana)'));
     topics.push(new Topic(30.5004461, 50.4663455, 'sasha-tessio', 'Sasha Tessio', 'Independent radio station (Sasha)'));
     topics.push(new Topic(30.5158929, 50.4598181, 'yasia-khomenko', 'Yasia Khomenko', 'Andreevsky Descent, Kyiv’s most picturesque street (Yasia)'));
-    topics.push(new Topic(lon + 0.1, lat + 0.0137, 'vova-vorotniov', 'Vova Vorotniov', 'Something'));
+    topics.push(new Topic(30.5042795, 50.4598247, 'vova-vorotniov', 'Vova Vorotniov', 'Podol - Petrivska 30-34, former garage cooperative turned into a hidden hang-out (Vova)'));
     topics.push(new Topic(30.58099, 50.479252, 'evgenia-vidischeva', 'Evgenia Vidischeva', 'Troeshina, a notorious commuter district (Evgenia)'));
 
 
@@ -57,7 +57,7 @@ window.onload = function () {
         map.addControl(nav, 'bottom-right');
 
         const cdn = 'https://s3.eu-central-1.amazonaws.com/kakdelakyivvideos';
-        teaserVidContent = `<video playsinline="true" autoplay="autoplay" muted loop width="100%">
+        teaserVidContent = `<video playsinline="true" autoplay="autoplay" muted loop width="100%" poster="img/kyiv.jpg">
             <source src="${cdn}/landing-page/video.webm" type="video/webm">
             <source src="${cdn}/landing-page/video.ogv" type="video/ogv">
             <source src="${cdn}/landing-page/video.mp4" type="video/mp4"> Sorry, your browser does not support HTML5 videos.
