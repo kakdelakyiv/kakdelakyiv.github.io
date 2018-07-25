@@ -135,6 +135,36 @@ window.onload = function () {
     aboutUsLink.addEventListener('click', function () {
         modal.show(null, 'html/about-us.html', null, false);
     });
+
+    const countDownDate = (new Date(2018, 6, 26, 22, 0, 0)).getTime();
+    const startDate = (new Date()).getTime();
+    const origDistance = countDownDate - startDate;
+
+    console.log(origDistance);
+    if (origDistance > 0) {
+        const cover = document.createElement('div');
+        cover.classList.add('countdown-modal');
+
+        const counter = document.createElement('h1');
+        counter.classList.add('countdown-counter');
+        cover.appendChild(counter);
+
+        document.body.appendChild(cover);
+
+        const countDown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+            counter.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (distance <= 0) {
+                clearInterval(countDown);
+                document.body.removeChild(cover);
+            }
+        }, 1000);
+    }
 };
 
 var mainTitleContainer, mainTitleH1, mainTitleH4;

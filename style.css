@@ -416,3 +416,21 @@ blockquote {
 .mit-ost-img {
     width: 30vw;
 }
+
+.countdown-modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.countdown-counter {
+    position: relative;
+    margin-top: 30vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 10vw;
+}
