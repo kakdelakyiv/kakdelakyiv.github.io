@@ -1,12 +1,14 @@
-import { notStrictEqual } from "assert";
-
 export class VideoPlayer {
     constructor(videoFolder) {
+        const cdn = 'https://s3.eu-central-1.amazonaws.com/kakdelakyivvideos';
         this.videoElement = document.createElement('video');
         this.videoElement.id = 'intro-vid';
         this.videoElement.setAttribute('playsinline', 'true');
         this.videoElement.setAttribute('autoplay', 'autoplay');
         this.videoElement.setAttribute('width', '100%');
+        //this.videoElement.setAttribute('preload', 'auto');
+        //this.videoElement.setAttribute('poster', `img/${videoFolder}/profile.jpg`);
+        this.videoElement.style.backgroundColor = 'black';
         this.videoElement.loop = true;
         this.videoElement.muted = true;
 
@@ -14,7 +16,7 @@ export class VideoPlayer {
 
         for (const type of types) {
             const sourceElement = document.createElement('source');
-            sourceElement.setAttribute('src', `vid/${videoFolder}/video.${type}`); 
+            sourceElement.setAttribute('src', `${cdn}/${videoFolder}/video.${type}`); 
             sourceElement.setAttribute('type', `video/${type}`); 
             this.videoElement.appendChild(sourceElement);
         }
